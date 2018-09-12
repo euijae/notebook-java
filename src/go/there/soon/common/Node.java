@@ -28,6 +28,4 @@ public class Node<T extends Comparable<T>> {
 	public void setData(T data) {
 		this.data = data;
 	}
-	
-	
 }

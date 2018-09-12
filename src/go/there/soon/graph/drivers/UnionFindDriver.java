@@ -1,4 +1,6 @@
-package go.there.soon.graph;
+package go.there.soon.graph.drivers;
+
+import go.there.soon.graph.UnionFind;
 
 public class UnionFindDriver {
 

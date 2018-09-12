@@ -1,24 +1,52 @@
 package go.there.soon.common;
 
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class GraphNode<T extends Comparable<T>> {
 	
 	private T data;
+	private int distance;
 	private boolean visited;
 	private String status;
-	private List<GraphNode<T>> successors;
-	
+	private List<GraphNode<T>> successors   = new LinkedList<>();
+	private List<GraphNode<T>> predecessors = new LinkedList<>();
+	private List<GraphNode<T>> shortestPath = new LinkedList<>();
+	private Map<GraphNode<T>, Integer> 
+							  adjacentNodes = new HashMap<>();
 	/***************
-	 * CONSTRUCTOR *
+	 * Constructor *
 	 ***************/
 	public GraphNode() {
-		this.visited = false;
-		this.status  = Status.UNVISITED.toString();
+		this.setVisited(false);
+		this.setStatus(Status.UNVISITED.toString());
+		this.setDistance(Integer.MAX_VALUE);
+	}
+	
+	public GraphNode(T data) {
+		this();
+		this.setData(data);
+	}
+	
+	public GraphNode(GraphNode<T> g) {
+		this.setAdjacentNodes(g.getAdjacentNodes());
+		this.setData(g.getData());
+		this.setDistance(g.getDistance());
+		this.setPredecessors(g.getPredecessors());
+		this.setShortestPath(g.getShortestPath());
+	}
+	
+	/*************
+	 * Utilities *
+	 *************/
+	public void addDestination(GraphNode<T> node, int distance) {
+		this.adjacentNodes.put(node, distance);
 	}
 	
 	/*********************
-	 * SETTER AND GETTER *
+	 * Setter and getter *
 	 *********************/
 	public T getData() {
 		return data;
@@ -43,5 +71,29 @@ public class GraphNode<T extends Comparable<T>> {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public List<GraphNode<T>> getPredecessors() {
+		return predecessors;
+	}
+	public void setPredecessors(List<GraphNode<T>> predecessors) {
+		this.predecessors = predecessors;
+	}
+	public int getDistance() {
+		return distance;
+	}
+	public void setDistance(int distance) {
+		this.distance = distance;
+	}
+	public List<GraphNode<T>> getShortestPath() {
+		return shortestPath;
+	}
+	public void setShortestPath(List<GraphNode<T>> shortestPath) {
+		this.shortestPath = shortestPath;
+	}
+	public Map<GraphNode<T>, Integer> getAdjacentNodes() {
+		return adjacentNodes;
+	}
+	public void setAdjacentNodes(Map<GraphNode<T>, Integer> adjacentNodes) {
+		this.adjacentNodes = adjacentNodes;
 	}
 }

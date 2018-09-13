@@ -1,12 +1,12 @@
 package go.there.soon.graph;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-import java.util.Set;
 
 import go.there.soon.common.GraphNode;
 import go.there.soon.common.Status;
@@ -16,7 +16,6 @@ public class Graph<T extends Comparable<T>> {
 	/**********
 	 * FIELDS *
 	 **********/
-	private Set<GraphNode<T>> nodeSet;
 	private List<GraphNode<T>> bfsPath;
 	private List<GraphNode<T>> dfsPath;
 	
@@ -28,68 +27,42 @@ public class Graph<T extends Comparable<T>> {
 		this.dfsPath = new ArrayList<>();
 	}
 	
-	public void addNode(GraphNode<T> graphNode) {
-		this.nodeSet.add(graphNode);
-	}
-	
-	public Graph<T> calculateShortestPathFromSource(Graph<T> graph, GraphNode<T> source) {
-		source.setDistance(0);
-		
-		Set<GraphNode<T>> visited = new HashSet<>();
-		Set<GraphNode<T>> unvisited = new HashSet<>();
-		
-		unvisited.add(source);
-		
-		while(unvisited.size() != 0) {
-			GraphNode<T> currentNode = getLowestDistanceNode(unvisited);
-			unvisited.remove(currentNode);
-			
-			for(Map.Entry<GraphNode<T>, Integer> adjPair : currentNode.getAdjacentNodes().entrySet()) {
-				GraphNode<T> adjNode = adjPair.getKey();
-				int edgeWeight = adjPair.getValue();
-				
-				if(!visited.contains(adjNode)) {
-					calculateMinimumDistance(adjNode, currentNode, edgeWeight);
-					unvisited.add(adjNode);
-				}
-			}
-			visited.add(currentNode);
-		}
-		
-		return graph;
-	}
-	
-	private void calculateMinimumDistance(
-			GraphNode<T> evaluationNode,
-			GraphNode<T> sourceNode,
-			int edgeWeight) {
-		if(sourceNode.getDistance() + edgeWeight < evaluationNode.getDistance()) {
-			evaluationNode.setDistance(sourceNode.getDistance() + edgeWeight);
-			List<GraphNode<T>> tempShortestPath = new ArrayList<>(evaluationNode.getShortestPath());
-			tempShortestPath.add(sourceNode);
-			evaluationNode.setShortestPath(tempShortestPath);
-		}
-	}
-	
-	private GraphNode<T> getLowestDistanceNode(Set<GraphNode<T>> unsettledNodes) {
-		GraphNode<T> lowestNode = new GraphNode<>();
-		int lowest = Integer.MAX_VALUE;
-		
-		for(GraphNode<T> unsettledNode : unsettledNodes) {
-			int distance = unsettledNode.getDistance();
-			
-			if(lowest > distance) {
-				lowestNode.setDistance(distance);
-				lowestNode = new GraphNode<>(unsettledNode);
-			}
-		}
-		
-		return lowestNode;
-	}
-	
 	/**************
 	 * TRAVERSALS *
 	 **************/
+	public void dijkstra(GraphNode<T> g) {
+		Queue<GraphNode<T>> queue = new LinkedList<>();
+		g.setDistance(0);
+		queue.add(g);
+		
+		Map<GraphNode<T>, Integer> shortestPath = new LinkedHashMap<>();
+		shortestPath.put(g, 0);
+		
+		while(!queue.isEmpty()) {
+			GraphNode<T> current = queue.poll();
+
+			for(Map.Entry<GraphNode<T>, Integer> entry : current.getAdjacentNodes().entrySet()) {
+				GraphNode<T> adj = entry.getKey();
+				int weight = entry.getValue();
+				
+				if(current.getDistance() + weight < adj.getDistance()) {
+					int d = current.getDistance() + weight;
+					adj.setDistance(d);
+					adj.setPredecessor(current);
+					shortestPath.put(adj, d);
+					queue.add(adj);
+				}
+			}
+		}
+		
+		StringBuilder sb = new StringBuilder();
+		for(Map.Entry<GraphNode<T>, Integer> map : shortestPath.entrySet()) {
+			sb.append("[" + map.getKey().getData() + ", " + map.getValue() + "] ");
+		}
+		
+		System.out.println(sb.toString());
+	}
+	
 	public void dfs(GraphNode<T> g) {
 		g.setVisited(true);
 		
@@ -159,13 +132,5 @@ public class Graph<T extends Comparable<T>> {
 	}
 	public void setDfsPath(List<GraphNode<T>> dfsPath) {
 		this.dfsPath = dfsPath;
-	}
-
-	public Set<GraphNode<T>> getNodeSet() {
-		return nodeSet;
-	}
-
-	public void setNodeSet(Set<GraphNode<T>> nodeSet) {
-		this.nodeSet = nodeSet;
 	}
 }

@@ -1,5 +1,8 @@
 package go.there.soon.graph.drivers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import go.there.soon.common.GraphNode;
 import go.there.soon.graph.Graph;
 
@@ -13,25 +16,26 @@ public class DijkstraDriver {
 		GraphNode<String> nodeE = new GraphNode<>("E");
 		GraphNode<String> nodeF = new GraphNode<>("F");
 		
-		nodeA.addDestination(nodeB, 10);
-		nodeA.addDestination(nodeC, 15);
-		nodeB.addDestination(nodeD, 12);
-		nodeB.addDestination(nodeF, 15);
-		nodeC.addDestination(nodeE, 10);
-		nodeD.addDestination(nodeE, 2);
-		nodeD.addDestination(nodeF, 1);
-		nodeF.addDestination(nodeE, 5);
+		Map<GraphNode<String>, Integer> map1 = new HashMap<>();
+		Map<GraphNode<String>, Integer> map2 = new HashMap<>();
+		Map<GraphNode<String>, Integer> map3 = new HashMap<>();
+		Map<GraphNode<String>, Integer> map4 = new HashMap<>();
+		Map<GraphNode<String>, Integer> map5 = new HashMap<>();
+		map1.put(nodeB, 10);
+		map1.put(nodeC, 15);
+		map2.put(nodeD, 12);
+		map2.put(nodeF, 15);
+		map3.put(nodeE, 10);
+		map4.put(nodeE, 2);
+		map4.put(nodeF, 1);
+		map5.put(nodeE, 5);
+		nodeA.setAdjacentNodes(map1);
+		nodeB.setAdjacentNodes(map2);
+		nodeC.setAdjacentNodes(map3);
+		nodeD.setAdjacentNodes(map4);
+		nodeF.setAdjacentNodes(map5);
 		
 		Graph<String> graph = new Graph<>();
-
-		graph.addNode(nodeA);
-		graph.addNode(nodeB);
-		graph.addNode(nodeC);
-		graph.addNode(nodeD);
-		graph.addNode(nodeE);
-		graph.addNode(nodeF);
-		
-		graph = graph.calculateShortestPathFromSource(graph, nodeA);
+		graph.dijkstra(nodeA);
 	}
-
 }

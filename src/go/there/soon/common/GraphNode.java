@@ -6,16 +6,17 @@ import java.util.List;
 import java.util.Map;
 
 public class GraphNode<T extends Comparable<T>> {
-	
+
 	private T data;
 	private int distance;
 	private boolean visited;
 	private String status;
+	private GraphNode<T> predecessor;
 	private List<GraphNode<T>> successors   = new LinkedList<>();
 	private List<GraphNode<T>> predecessors = new LinkedList<>();
 	private List<GraphNode<T>> shortestPath = new LinkedList<>();
-	private Map<GraphNode<T>, Integer> 
-							  adjacentNodes = new HashMap<>();
+	private Map<GraphNode<T>, Integer> adjacentNodes = new HashMap<>();
+
 	/***************
 	 * Constructor *
 	 ***************/
@@ -23,13 +24,14 @@ public class GraphNode<T extends Comparable<T>> {
 		this.setVisited(false);
 		this.setStatus(Status.UNVISITED.toString());
 		this.setDistance(Integer.MAX_VALUE);
+		this.setPredecessor(null);
 	}
-	
+
 	public GraphNode(T data) {
 		this();
 		this.setData(data);
 	}
-	
+
 	public GraphNode(GraphNode<T> g) {
 		this.setAdjacentNodes(g.getAdjacentNodes());
 		this.setData(g.getData());
@@ -37,14 +39,7 @@ public class GraphNode<T extends Comparable<T>> {
 		this.setPredecessors(g.getPredecessors());
 		this.setShortestPath(g.getShortestPath());
 	}
-	
-	/*************
-	 * Utilities *
-	 *************/
-	public void addDestination(GraphNode<T> node, int distance) {
-		this.adjacentNodes.put(node, distance);
-	}
-	
+
 	/*********************
 	 * Setter and getter *
 	 *********************/
@@ -95,5 +90,11 @@ public class GraphNode<T extends Comparable<T>> {
 	}
 	public void setAdjacentNodes(Map<GraphNode<T>, Integer> adjacentNodes) {
 		this.adjacentNodes = adjacentNodes;
+	}
+	public GraphNode<T> getPredecessor() {
+		return predecessor;
+	}
+	public void setPredecessor(GraphNode<T> predecessor) {
+		this.predecessor = predecessor;
 	}
 }

@@ -2,6 +2,7 @@ package go.there.soon.graph.drivers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 import go.there.soon.common.GraphNode;
 import go.there.soon.graph.Graph;
@@ -37,5 +38,18 @@ public class DijkstraDriver {
 		
 		Graph<String> graph = new Graph<>();
 		graph.dijkstra(nodeA);
+		
+		Stack<GraphNode<String>> shortestPath = new Stack<>();
+		shortestPath.push(nodeE);
+		
+		GraphNode<String> node = nodeE;
+		while(node.getPredecessor() != null) {
+			shortestPath.push(node.getPredecessor());
+			node = node.getPredecessor();
+		}
+		
+		while(!shortestPath.isEmpty()) {
+			System.out.print(shortestPath.pop().getData() + " ");
+		}
 	}
 }

@@ -13,56 +13,30 @@ import go.there.soon.common.Status;
 
 public class Graph<T extends Comparable<T>> {
 	
-	/**********
-	 * FIELDS *
-	 **********/
+	/** Fields */
 	private List<GraphNode<T>> bfsPath;
 	private List<GraphNode<T>> dfsPath;
 	
-	/****************
-	 * CONSTRUCTORS *
-	 ****************/
+	/** Recipe for Topological Order */
+	private Queue<T> toQueue;
+	private Queue<T> toSortQueue;
+	private Map<T, Integer> toInDegree;
+	private Map<T, List<T>> toAdjacentMap;
+	private T toSource;
+	
+	/** Constructors */
 	public Graph() {
 		this.bfsPath = new ArrayList<>();
 		this.dfsPath = new ArrayList<>();
+		
+		this.toQueue 	 = new LinkedList<>();
+		this.toSortQueue = new LinkedList<>();
+		
+		this.toInDegree 	= new HashMap<>();
+		this.toAdjacentMap  = new HashMap<>();
 	}
 	
-	/**************
-	 * TRAVERSALS *
-	 **************/
-	public void dijkstra(GraphNode<T> g) {
-		Queue<GraphNode<T>> queue = new LinkedList<>();
-		g.setDistance(0);
-		queue.add(g);
-		
-		Map<GraphNode<T>, Integer> shortestPath = new LinkedHashMap<>();
-		shortestPath.put(g, 0);
-		
-		while(!queue.isEmpty()) {
-			GraphNode<T> current = queue.poll();
-
-			for(Map.Entry<GraphNode<T>, Integer> entry : current.getAdjacentNodes().entrySet()) {
-				GraphNode<T> adj = entry.getKey();
-				int weight = entry.getValue();
-				
-				if(current.getDistance() + weight < adj.getDistance()) {
-					int d = current.getDistance() + weight;
-					adj.setDistance(d);
-					adj.setPredecessor(current);
-					shortestPath.put(adj, d);
-					queue.add(adj);
-				}
-			}
-		}
-		
-		StringBuilder sb = new StringBuilder();
-		for(Map.Entry<GraphNode<T>, Integer> map : shortestPath.entrySet()) {
-			sb.append("[" + map.getKey().getData() + ", " + map.getValue() + "] ");
-		}
-		
-		System.out.println(sb.toString());
-	}
-	
+	/** Traversals */
 	public void dfs(GraphNode<T> g) {
 		g.setVisited(true);
 		
@@ -98,9 +72,70 @@ public class Graph<T extends Comparable<T>> {
 		}
 	}
 	
-	/*************
-	 * UTILITIES *
-	 *************/
+	public void dijkstra(GraphNode<T> g) {
+		Queue<GraphNode<T>> queue = new LinkedList<>();
+		g.setDistance(0);
+		queue.add(g);
+		
+		Map<GraphNode<T>, Integer> shortestPath = new LinkedHashMap<>();
+		shortestPath.put(g, 0);
+		
+		while(!queue.isEmpty()) {
+			GraphNode<T> current = queue.poll();
+
+			for(Map.Entry<GraphNode<T>, Integer> entry : current.getAdjacentNodes().entrySet()) {
+				GraphNode<T> adj = entry.getKey();
+				int weight = entry.getValue();
+				
+				if(current.getDistance() + weight < adj.getDistance()) {
+					int d = current.getDistance() + weight;
+					adj.setDistance(d);
+					adj.setPredecessor(current);
+					shortestPath.put(adj, d);
+					queue.add(adj);
+				}
+			}
+		}
+		
+		StringBuilder sb = new StringBuilder();
+		for(Map.Entry<GraphNode<T>, Integer> map : shortestPath.entrySet())
+			sb.append("[" + map.getKey().getData() + ", " + map.getValue() + "] ");
+		
+		System.out.println(sb.toString());
+	}
+	
+	public void topologicalSort(T source) {
+		toQueue.add(source);
+		toSortQueue.add(source);
+		toInDegree.remove(source);
+		
+		while(!toQueue.isEmpty()) {
+			T node = toQueue.poll();
+			topologicalSortUtility(node);
+		}
+	}
+	
+	public void topologicalSortUtility(T nodeKey) {
+		List<T> entrySet = this.toAdjacentMap.get(nodeKey);
+		
+		if(entrySet != null) {
+			for(T key : entrySet) {
+				int value = this.toInDegree.get(key);
+				
+				if(value == 1) {
+					this.toQueue.add(key);
+					this.toSortQueue.add(key);
+					this.toInDegree.remove(key);
+				} else {
+					this.toInDegree.put(key, value-1);
+				}
+			}
+		}
+		
+		this.toAdjacentMap.remove(nodeKey);
+	}
+	
+	/** Utilities */
 	public boolean hasCycle(GraphNode<T> g) {
 		g.setStatus(Status.INPROGRESS.toString());
 		List<GraphNode<T>> successor = g.getSuccessors();
@@ -118,9 +153,7 @@ public class Graph<T extends Comparable<T>> {
 		return false;
 	}
 
-	/*********************
-	 * SETTER AND GETTER *
-	 *********************/
+	/** Setter and getter */
 	public List<GraphNode<T>> getBfsPath() {
 		return bfsPath;
 	}
@@ -132,5 +165,37 @@ public class Graph<T extends Comparable<T>> {
 	}
 	public void setDfsPath(List<GraphNode<T>> dfsPath) {
 		this.dfsPath = dfsPath;
+	}
+	public Queue<T> getToQueue() {
+		return toQueue;
+	}
+	public void setToQueue(Queue<T> toQueue) {
+		this.toQueue = toQueue;
+	}
+	public Map<T, Integer> getToInDegree() {
+		return toInDegree;
+	}
+	public void setToInDegree(Map<T, Integer> toInDegree) {
+		this.toInDegree = toInDegree;
+	}
+	public Map<T, List<T>> getToAdjacentMap() {
+		return toAdjacentMap;
+	}
+	public void setToAdjacentMap(Map<T, List<T>> toAdjacentMap) {
+		this.toAdjacentMap = toAdjacentMap;
+	}
+	public T getToSource() {
+		return toSource;
+	}
+	public void setToSource(T toSource) {
+		this.toSource = toSource;
+	}
+
+	public Queue<T> getToSortQueue() {
+		return toSortQueue;
+	}
+
+	public void setToSortQueue(Queue<T> toSortQueue) {
+		this.toSortQueue = toSortQueue;
 	}
 }

@@ -16,10 +16,8 @@ public class GraphNode<T extends Comparable<T>> {
 	private List<GraphNode<T>> predecessors = new LinkedList<>();
 	private List<GraphNode<T>> shortestPath = new LinkedList<>();
 	private Map<GraphNode<T>, Integer> adjacentNodes = new HashMap<>();
-
-	/***************
-	 * Constructor *
-	 ***************/
+	
+	/** Constructors */
 	public GraphNode() {
 		this.setVisited(false);
 		this.setStatus(Status.UNVISITED.toString());
@@ -31,7 +29,7 @@ public class GraphNode<T extends Comparable<T>> {
 		this();
 		this.setData(data);
 	}
-
+	
 	public GraphNode(GraphNode<T> g) {
 		this.setAdjacentNodes(g.getAdjacentNodes());
 		this.setData(g.getData());
@@ -40,9 +38,7 @@ public class GraphNode<T extends Comparable<T>> {
 		this.setShortestPath(g.getShortestPath());
 	}
 
-	/*********************
-	 * Setter and getter *
-	 *********************/
+	/** Setter and getter */
 	public T getData() {
 		return data;
 	}

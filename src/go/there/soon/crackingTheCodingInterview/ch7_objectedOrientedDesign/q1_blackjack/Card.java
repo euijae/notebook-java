@@ -38,7 +38,7 @@ public abstract class Card {
 		System.out.print(faceValues[faceValue-1]);
 		switch(suit) {
 			case Club:
-				System.out.println("c");
+				System.out.print("c");
 				break;
 			case Heart:
 				System.out.print("h");

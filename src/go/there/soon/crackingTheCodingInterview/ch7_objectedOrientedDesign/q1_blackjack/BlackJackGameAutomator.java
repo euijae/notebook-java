@@ -7,6 +7,7 @@ public class BlackJackGameAutomator {
 	private BlackJackHand [] hands;
 	private static final int HIT_UNTIL = 16;
 	
+	/** Initialize the players */
 	public BlackJackGameAutomator(int numPlayers) {
 		hands = new BlackJackHand[numPlayers];
 		
@@ -14,18 +15,24 @@ public class BlackJackGameAutomator {
 			hands[i] = new BlackJackHand();
 	}
 	
+	
 	public boolean dealInitial() {
+		/** Each players will have two cards */
 		for(BlackJackHand hand : hands) {
+			/** First and second cards */
 			BlackJackCard card1 = deck.dealCard();
 			BlackJackCard card2 = deck.dealCard();
 			
+			/** return if one of them is null */
 			if(card1 == null || card2 == null)
 				return false;
 			
+			/** Give them a hand */
 			hand.addCard(card1);
 			hand.addCard(card2);
 		}
 		
+		/** True if the deal gets done */
 		return true;
 	}
 	
@@ -90,6 +97,7 @@ public class BlackJackGameAutomator {
 	public void initializeDeck() {
 		ArrayList<BlackJackCard> cards = new ArrayList<>();
 		
+		/** Set 52 cards (each suit has 13 cards) */
 		for(int i = 1; i <= 13; i++) {
 			for(int j = 0; j <= 3; j++) {
 				Suit suit = Suit.getSuitFromValue(j);

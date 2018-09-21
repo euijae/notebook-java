@@ -14,6 +14,7 @@ public class Deck <T extends Card> {
 		cards = deckOfCards;
 	}
 	
+	/** Actually shuffle the decks */
 	public void shuffle() {
 		for(int i = 0; i < cards.size(); i++) {
 			int j = AssortedMethods.randomIntInRange(i, cards.size() - i - 1);

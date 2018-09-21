@@ -6,6 +6,6 @@ public class AssortedMethods {
 	}
 	
 	public static int randomIntInRange(int min, int max) {
-		return randomInt(max + 1 - min) + min;
+		return randomInt(max + 1 - min) + min; // returns between (including) min and max
 	}
 }

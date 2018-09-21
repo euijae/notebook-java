@@ -6,6 +6,7 @@ public class Question {
 	public static void main(String [] args) {
 		int numHands = 5;
 		
+		/** Set players */
 		BlackJackGameAutomator automator = new BlackJackGameAutomator(numHands);
 		automator.initializeDeck();
 		
@@ -21,7 +22,7 @@ public class Question {
 			if(blackjacks.size() > 0) {
 				System.out.print("Blackjack at ");
 				for(int i : blackjacks)
-					System.out.print(i + ", ");
+					System.out.print(i + " ");
 				System.out.println("");
 			} else {
 				success = automator.playAllHands();

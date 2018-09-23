@@ -1,4 +1,4 @@
-package go.there.soon.crackingTheCodingInterview.ch7_objectedOrientedDesign.q1_blackjack;
+package go.there.soon.ctci.ch7.q1;
 
 public class BlackJackCard extends Card{
 	public BlackJackCard(int c, Suit s) {
@@ -14,19 +14,19 @@ public class BlackJackCard extends Card{
 		else
 			return faceValue;
 	}
-	
+
 	public int minValue() {
 		return (isAce()) ? 1 : value();
 	}
-	
+
 	public int maxValue() {
 		return (isAce()) ? 11 : value();
 	}
-	
+
 	public boolean isAce() {
 		return faceValue == 1;
 	}
-	
+
 	public boolean isFaceCard() {
 		return faceValue >= 11 && faceValue <= 13;
 	}

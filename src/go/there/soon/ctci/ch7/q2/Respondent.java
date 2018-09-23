@@ -1,4 +1,4 @@
-package go.there.soon.crackingTheCodingInterview.ch7_objectedOrientedDesign.q2_callCenter;
+package go.there.soon.ctci.ch7_objectedOrientedDesign.q2_callCenter;
 
 public class Respondent {
 	private boolean isAvailable;

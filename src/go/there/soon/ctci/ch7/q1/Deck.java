@@ -1,4 +1,4 @@
-package go.there.soon.crackingTheCodingInterview.ch7_objectedOrientedDesign.q1_blackjack;
+package go.there.soon.ctci.ch7.q1;
 
 import java.util.ArrayList;
 
@@ -7,13 +7,13 @@ import go.there.soon.crackingTheCodingInterview.library.AssortedMethods;
 public class Deck <T extends Card> {
 	private ArrayList<T> cards;
 	private int dealtIndex = 0;
-	
+
 	public Deck() {}
-	
+
 	public void setDeckOfCards(ArrayList<T> deckOfCards) {
 		cards = deckOfCards;
 	}
-	
+
 	/** Actually shuffle the decks */
 	public void shuffle() {
 		for(int i = 0; i < cards.size(); i++) {
@@ -24,15 +24,15 @@ public class Deck <T extends Card> {
 			cards.set(j, card1);
 		}
 	}
-	
+
 	public int remainingCards() {
 		return cards.size() - dealtIndex;
 	}
-	
+
 	public T[] dealHand(int number) {
-		if(remainingCards() < number) 
+		if(remainingCards() < number)
 			return null;
-		
+
 		@SuppressWarnings("unchecked")
 		T[] hand = (T[]) new Card[number];
 		int count = 0;
@@ -43,21 +43,21 @@ public class Deck <T extends Card> {
 				count ++;
 			}
 		}
-		
+
 		return hand;
 	}
-	
+
 	public T dealCard() {
 		if(remainingCards() == 0 || dealtIndex > cards.size()-1)
 			return null;
-		
+
 		T card = cards.get(dealtIndex);
 		card.markUnavailable();
 		dealtIndex++;
-		
+
 		return card;
 	}
-	
+
 	public void print() {
 		for(Card card : cards) {
 			card.print();

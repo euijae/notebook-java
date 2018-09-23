@@ -1,24 +1,24 @@
-package go.there.soon.crackingTheCodingInterview.ch7_objectedOrientedDesign.q1_blackjack;
+package go.there.soon.ctci.ch7.q1;
 
 import java.util.ArrayList;
 
 public class Question {
 	public static void main(String [] args) {
 		int numHands = 5;
-		
+
 		/** Set players */
 		BlackJackGameAutomator automator = new BlackJackGameAutomator(numHands);
 		automator.initializeDeck();
-		
+
 		boolean success = automator.dealInitial();
-		
+
 		if(!success) {
 			System.out.println("Error. Out of cards.");
 		} else {
 			System.out.println("-- Initial --");
 			automator.printHandsAndScore();
 			ArrayList<Integer> blackjacks = automator.getBlackJacks();
-			
+
 			if(blackjacks.size() > 0) {
 				System.out.print("Blackjack at ");
 				for(int i : blackjacks)
@@ -28,7 +28,7 @@ public class Question {
 				success = automator.playAllHands();
 				automator.printHandsAndScore();
 				ArrayList<Integer> winners = automator.getWinners();
-				
+
 				if(winners.size() > 0) {
 					System.out.print("Winners: ");
 					for(int i : winners) {

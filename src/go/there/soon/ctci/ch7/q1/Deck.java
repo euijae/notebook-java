@@ -2,7 +2,7 @@ package go.there.soon.ctci.ch7.q1;
 
 import java.util.ArrayList;
 
-import go.there.soon.crackingTheCodingInterview.library.AssortedMethods;
+import go.there.soon.ctci.library.AssortedMethods;
 
 public class Deck <T extends Card> {
 	private ArrayList<T> cards;

@@ -13,6 +13,7 @@ public class TopologicalSortDriver {
 	public static void main(String[] args) {
 		GraphNode<String> v1 = new GraphNode<>("v1");
 		v1.toString();
+		v1.notify();
 		GraphNode<String> v2 = new GraphNode<>("v2");
 		GraphNode<String> v3 = new GraphNode<>("v3");
 		GraphNode<String> v4 = new GraphNode<>("v4");

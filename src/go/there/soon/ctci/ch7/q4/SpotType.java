@@ -1,7 +1,8 @@
 package go.there.soon.ctci.ch7.q4;
 
+@Deprecated
 public enum SpotType {
-	Motocycle,
 	Compact,
+	Single,
 	Large;
 }

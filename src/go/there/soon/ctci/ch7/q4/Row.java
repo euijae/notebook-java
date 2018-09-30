@@ -1,48 +1,29 @@
 package go.there.soon.ctci.ch7.q4;
 
+@Deprecated
 public class Row {
 	private Spot [] spots;
 	private int whichRow;
 	
-	private int numM;
+	private int numS;
 	private int numC;
 	private int numL;
 	
-	public Row(int r, int m, int c, int l) {
+	public Row(int r, int s, int c, int l) {
 		whichRow = r;
-		numM = m;
+		numS = s;
 		numC = c;
 		numL = l;
 		
-		spots = new Spot[m + c + l];
-		
-		int i = 0;
-		
-		for(; i < m; i++)
-			spots[i].setType(SpotType.Motocycle);
-		
-		for(; i < m + c; i++)
-			spots[i].setType(SpotType.Compact);
-		
-		for(; i < m + c + l; i++) 
-			spots[i].setType(SpotType.Large);
+		spots = new Spot[s + c + l];
 	}
 	
-	public void parkIn(Vehicle v) {
+	public boolean isAvailable() {
+		for(int i = 0; i < spots.length; i++)
+			if(spots[i].isAvailable())
+				return true;
 		
-	}
-	
-	public void parkOut(Vehicle v) {
-		int [] spots_local = {};
-		
-		for(int i = 0; i < spots_local.length; i++) {
-			int at = spots_local[i];
-			spots[at] = null;
-		}
-	}
-	
-	public void isAvailable(Vehicle v) {
-		
+		return false;
 	}
 	
 	/** setters and getters */
@@ -62,12 +43,12 @@ public class Row {
 		this.spots = spots;
 	}
 
-	public int getNumM() {
-		return numM;
+	public int getNumS() {
+		return numS;
 	}
 
-	public void setNumM(int numM) {
-		this.numM = numM;
+	public void setNumS(int numS) {
+		this.numS = numS;
 	}
 
 	public int getNumC() {

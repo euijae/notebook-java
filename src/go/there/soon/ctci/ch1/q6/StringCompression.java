@@ -20,7 +20,7 @@ public class StringCompression {
 			char c2 = chars[i];
 			
 			if(c1 != c2) {
-				compressed.append("" + c1 + counter);
+				compressed.append(c1 + counter);
 				counter = 1;
 				c1 = c2;
 			} else {
@@ -28,7 +28,7 @@ public class StringCompression {
 			}
 		}
 		
-		compressed.append("" + c1 + counter);
+		compressed.append(c1 + counter);
 		
 		return (str.length() > compressed.length()) ? compressed.toString() : str;
 	}

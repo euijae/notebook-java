@@ -1,62 +1,74 @@
 package go.there.soon.ctci.ch4.tree;
 
 public class BinarySearchTree<T extends Comparable<T>> {
-	public void insert(TreeNode<T> root, T toBeInserted) {
-		if(root == null) {
-			root = new TreeNode<>(toBeInserted);
+	
+	private TreeNode<T> root;
+	
+	public BinarySearchTree() {}
+	
+	public BinarySearchTree(TreeNode<T> root) {
+		this.root = root;
+	}
+	
+	public void insert(TreeNode<T> node, T toBeInserted) {
+		if(node == null) {
+			node = new TreeNode<>(toBeInserted);
 		} else {
-			if(root.data.compareTo(toBeInserted) > 0){
-				if(root.left == null) {
-					root.left = new TreeNode<>(toBeInserted);
+			if(node.data.compareTo(toBeInserted) > 0){
+				if(node.left == null) {
+					node.left = new TreeNode<>(toBeInserted);
 				} else {
-					insert(root.left, toBeInserted);
+					insert(node.left, toBeInserted);
 				}
 			} else {
-				if(root.right == null) {
-					root.right = new TreeNode<>(toBeInserted);
+				if(node.right == null) {
+					node.right = new TreeNode<>(toBeInserted);
 				} else {
-					insert(root.right, toBeInserted);
+					insert(node.right, toBeInserted);
 				}
 			}
 		}
 	}
 	
-	public boolean find(TreeNode<T> root, T target) {
-		if(root == null)
+	public boolean find(TreeNode<T> node, T target) {
+		if(node == null)
 			return false;
 		
-		if(root.data.compareTo(target) == 0)
+		if(node.data.compareTo(target) == 0)
 			return true;
 		
-		return find(root.left, target) || find(root.right, target);
+		return find(node.left, target) || find(node.right, target);
 	}
 	
-	public boolean delete(TreeNode<T> root, T target) {
+	public boolean delete(T target) {
 		if(!find(root, target))
 			return false;
-		
+
 		TreeNode<T> parent = root;
 		TreeNode<T> node   = null;
 		
-		while(parent.left != null && parent.right != null) {
-			if(parent.left != null && parent.left.data.compareTo(target) == 0) {
-				node = parent.left;
-				break;
-			}
-			
-			if(parent.right != null && parent.right.data.compareTo(target) == 0) {
-				node = parent.right;
-				break;
-			}
-			
-			parent = (target.compareTo(parent.data) <= 0) ? parent.left : parent.right;
-		}
-		
-		if(node == null) {
-			if(root.data.compareTo(target) == 0) {
-				node = root;
+		if(root.data.compareTo(target) == 0) {
+			if(root.left == null && root.right == null) {
+				System.out.println("yes");
+				root = null;
+				return true;
 			} else {
-				return false;
+				System.out.println("no");
+				node = root;
+			}
+		} else {
+			while(parent.left != null && parent.right != null) {
+				if(parent.left != null && parent.left.data.compareTo(target) == 0) {
+					node = parent.left;
+					break;
+				}
+				
+				if(parent.right != null && parent.right.data.compareTo(target) == 0) {
+					node = parent.right;
+					break;
+				}
+				
+				parent = (target.compareTo(parent.data) <= 0) ? parent.left : parent.right;
 			}
 		}
 		
@@ -129,19 +141,27 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		}
 	}
 	
-	public void inOrder(TreeNode<T> root) {
-		if(root != null) {
-			inOrder(root.left);
-			System.out.print(root.data + " ");
-			inOrder(root.right);
+	public void inOrder(TreeNode<T> node) {
+		if(node != null) {
+			inOrder(node.left);
+			System.out.print(node.data + " ");
+			inOrder(node.right);
 		}
 	}
 	
-	public void postOrder(TreeNode<T> root) {
-		if(root != null) {
-			postOrder(root.left);
-			postOrder(root.right);
-			System.out.print(root.data + " ");
+	public void postOrder(TreeNode<T> node) {
+		if(node != null) {
+			postOrder(node.left);
+			postOrder(node.right);
+			System.out.print(node.data + " ");
 		}
+	}
+
+	public TreeNode<T> getRoot() {
+		return root;
+	}
+
+	public void setRoot(TreeNode<T> root) {
+		this.root = root;
 	}
 }

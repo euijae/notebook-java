@@ -5,6 +5,7 @@ public class TreeNode<T extends Comparable<T>> {
 	public TreeNode<T> right;
 	public TreeNode<T> parent;
 	public T data;
+	public int sum;
 	
 	public TreeNode() {}
 	
@@ -12,6 +13,7 @@ public class TreeNode<T extends Comparable<T>> {
 		this.data  = data;
 		this.left  = null;
 		this.right = null;
+		this.sum = 0;
 	}
 	
 	public void setBoth(TreeNode<T> left, TreeNode<T> right) {

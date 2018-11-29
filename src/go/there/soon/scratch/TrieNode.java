@@ -4,13 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TrieNode {
-	public Character represent;
+	public char ch;
 	public Map<Character, TrieNode> children;
 	public boolean isWord;
-	public boolean isEnd;
 	
-	public TrieNode(Character ch) {
-		represent = new Character(ch);
-		children = new HashMap<>();
+	public TrieNode(char ch) {
+		this.ch = ch;
+		this.children = new HashMap<>();
 	}
 }

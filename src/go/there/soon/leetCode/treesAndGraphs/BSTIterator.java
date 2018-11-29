@@ -1,4 +1,4 @@
-package go.there.soon.leetCode.tree;
+package go.there.soon.leetCode.treesAndGraphs;
 
 import java.util.Stack;
 
@@ -8,25 +8,25 @@ public class BSTIterator {
 	private Stack<TreeNode> stack; 
 	
     public BSTIterator(TreeNode root) {
-    	this.root = root;
-    	this.stack = new Stack<>();
-    	this.setIterator();
+	    	this.root = root;
+	    	this.stack = new Stack<>();
+	    	this.setIterator();
     }
     
     public void setIterator() {
-    	Stack<TreeNode> tempStack = new Stack<>();
-    	tempStack.push(root);
-    	stack.push(root);
-    	
-    	while(!tempStack.isEmpty()) {
-    		TreeNode temp = tempStack.pop();
-    		
-    		if(temp.right != null)
-    			stack.push(temp.right);
-    		
-    		if(temp.left != null)
-    			stack.push(temp.left);
-    	}
+	    	Stack<TreeNode> tempStack = new Stack<>();
+	    	tempStack.push(root);
+	    	stack.push(root);
+	    	
+	    	while(!tempStack.isEmpty()) {
+	    		TreeNode temp = tempStack.pop();
+	    		
+	    		if(temp.right != null)
+	    			stack.push(temp.right);
+	    		
+	    		if(temp.left != null)
+	    			stack.push(temp.left);
+	    	}
     }
     
     /** @return whether we have a next smallest number */
@@ -38,13 +38,6 @@ public class BSTIterator {
     public int next() {
     	return stack.peek().val;
     }
-}
-
-class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
-	TreeNode(int x) { val = x; }
 }
 
 /**

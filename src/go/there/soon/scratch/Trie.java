@@ -8,43 +8,48 @@ public class Trie {
 	}
 	
 	public void insert(String str) {
-		TrieNode node = root;
+		TrieNode temp = root;
+		
 		for(int i = 0; i < str.length(); i++) {
-			Character key = str.charAt(i);
-			if(!node.children.containsKey(key)) 
-				node.children.put(key, new TrieNode(key));
-			node = node.children.get(key);
+			char key = str.charAt(i);
 			
-			if(i == str.length() -1) {
-				node.isEnd  = true;
-				node.isWord = true;
+			if(!temp.children.containsKey(key)) {
+				temp.children.put(key, new TrieNode(key));
 			}
+			
+			temp = temp.children.get(key);
 		}
+		
+		temp.isWord = true;
 	}
 	
 	public boolean search(String str) {
-		TrieNode node = root;
+		TrieNode temp = root;
+		
 		for(int i = 0; i < str.length(); i++) {
-			Character key = str.charAt(i);
-
-			if(!node.children.containsKey(key))
-				return false;
+			char key = str.charAt(i);
 			
-			node = node.children.get(key);
+			if(!temp.children.containsKey(key)) {
+				return false;
+			}
+			
+			temp = temp.children.get(key);
 		}
 		
-		return node.isWord;
+		return temp.isWord;
 	}
 	
 	public boolean startsWith(String str) {
-		TrieNode node = root;
+		TrieNode temp = root;
+		
 		for(int i = 0; i < str.length(); i++) {
-			Character key = str.charAt(i);
-
-			if(!node.children.containsKey(key))
-				return false;
+			char key = str.charAt(i);
 			
-			node = node.children.get(key);
+			if(!temp.children.containsKey(key)) {
+				return false;
+			}
+			
+			temp = temp.children.get(key);
 		}
 		
 		return true;

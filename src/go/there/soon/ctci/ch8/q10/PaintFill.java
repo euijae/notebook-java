@@ -14,7 +14,7 @@ public class PaintFill {
 				{1, 1, 1, 1, 1, 2, 2, 1}
 		};
 		
-		paintFill(m, 7, 7, 9);
+		paintFill(m, 0, 0, 9);
 		
 		for(int i = 0; i < m.length; i++) {
 			for(int j = 0; j < m[i].length; j++)

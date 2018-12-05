@@ -1,4 +1,4 @@
-package go.there.soon.leetCode.SortingSearching;
+package go.there.soon.leetCode.sortingSearching;
 
 import java.util.Arrays;
 

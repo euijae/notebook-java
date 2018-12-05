@@ -8,6 +8,15 @@ import go.there.soon.ctci.ch4.tree.TreeNode;
 public class PathSum {
 
 	public static void main(String[] args) {
+		String s = "aaabbcc";
+		System.out.println(
+				s.substring(0,1)
+				+ ","
+				+ s.substring(1, 6) 
+				+ ","
+				+ s.substring(6)
+				);
+		
 		TreeNode<Integer> n1 = new TreeNode<Integer>(10);
 		TreeNode<Integer> n2 = new TreeNode<Integer>(5);
 		TreeNode<Integer> n3 = new TreeNode<Integer>(-3);

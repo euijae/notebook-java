@@ -6,6 +6,8 @@ import java.util.List;
 public class PowerSet {
 
 	public static void main(String[] args) {
+		String s = "aacecaaa";
+		System.out.println(s.substring(0, s.length()-1));
 		for(List<Integer> list : sol1(new int []{1, 2, 3})) {
 			System.out.println(list.toString());
 		}

@@ -6,7 +6,7 @@ public class Permutation {
 
 	public static void main(String[] args) {
 		boolean isDuplicated = true;
-		ArrayList<String> pList = permutation("111111111", isDuplicated);
+		ArrayList<String> pList = permutation("abc", !isDuplicated);
 		
 		for(String str : pList) {
 			System.out.println(str);

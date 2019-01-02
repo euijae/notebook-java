@@ -12,8 +12,8 @@ public class Uber {
 	public void test() {
 		int [] nums = {-5,3,2,-6,1,0,10};
 		int target = 5;
-		
-		for(List<Integer> result : findSubArray(nums, target)) 
+		List<List<Integer>> results = findSubArray(nums, target);
+		for(List<Integer> result : results) 
 			System.out.println(result.toString());
 	}
 	
@@ -29,7 +29,7 @@ public class Uber {
 					int target,
 					int sum,
 					int index) {
-		if(target == sum)
+		//if(target == sum)
 			results.add(new ArrayList<>(result));
 		
 		for(int i = index; i < nums.length; i++) {

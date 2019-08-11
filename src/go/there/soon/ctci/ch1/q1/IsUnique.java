@@ -1,7 +1,9 @@
 package go.there.soon.ctci.ch1.q1;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class IsUnique {
 
@@ -37,15 +39,13 @@ public class IsUnique {
 	 * @return
 	 */
 	public static boolean sol2(String str) {
-		char [] arr = str.toCharArray();
-		Map<Character, Integer> dict = new HashMap<>();
-		
-		for(int i = 0; i < arr.length; i++) {
-			if(dict.containsKey(arr[i])) {
+		Set<Character> set = new HashSet<>();
+
+		for(int i = 0; i < str.length(); i++) {
+			if(set.contains(str.charAt(i)))
 				return false;
-			} else {
-				dict.put(arr[i], 1);
-			}
+
+			set.add(str.charAt(i));
 		}
 		
 		return true;

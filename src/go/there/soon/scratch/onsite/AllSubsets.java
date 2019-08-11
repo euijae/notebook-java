@@ -2,10 +2,10 @@ package go.there.soon.scratch.onsite;
 
 import java.util.*;
 
-public class Uber {
+public class AllSubsets {
 
 	public static void main(String[] args) {
-		Uber o = new Uber();
+		AllSubsets o = new AllSubsets();
 		o.test();
 	}
 

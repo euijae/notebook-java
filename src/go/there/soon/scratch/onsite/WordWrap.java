@@ -2,23 +2,31 @@ package go.there.soon.scratch.onsite;
 
 import java.util.ArrayList;
 
-public class AmazonOnSite {
+public class WordWrap {
 
 	public static void main(String[] args) {
-		String  [] str = {"Our approach for quarters"
+		String [] str = {"Our approach for quarters"
 				,"applies to dimes as well,"
 				,"but we apply this for each"
 				,"of the four of five parts of the" 
 				,"above statement. So, for the first part"
 				,"we get the following statements:"};
 		
-		ArrayList<String> lines = getLines(str, 30);
-		System.out.println("---------------");
+		List<String> lines = getLines(str, 30);
+		drawHorizontalLine(30);
+
 		for(String line : lines) {
 			System.out.println(line);
 		}
 	}
-	
+
+	public static void drawHorizontalLine(int length) {
+		while(length > 0) {
+			System.out.print("-" + (length == 1 ? "\n" : ""));
+			length--;
+		}
+	}
+
 	public static ArrayList<String> getLines(String [] strings, int limit) {
 		ArrayList<String> lines = new ArrayList<>();
 		

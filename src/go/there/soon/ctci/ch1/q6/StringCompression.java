@@ -3,8 +3,35 @@ package go.there.soon.ctci.ch1.q6;
 public class StringCompression {
 
 	public static void main(String[] args) {
-		String str = "aabccdeeaa";
+		String str = "aabccdeeee";
 		System.out.println(getCompressed(str));
+		System.out.println(getCompressed2(str));
+	}
+
+	/**
+	 * Wrote this again for Amazon interview on August 2019
+	 * @param str
+	 * @return
+	 */
+	public static String getCompressed2(String str) {
+		char ch = str.charAt(0);
+		int counter = 1;
+		StringBuilder sb = new StringBuilder();
+
+		for(int i = 1; i < str.length(); i++) {
+			if(ch == str.charAt(i)) {
+				counter ++;
+			} else {
+				sb.append(ch + String.valueOf(counter));
+				ch = str.charAt(i);
+				counter = 1;
+			}
+
+			if(i == str.length() - 1)
+				sb.append(ch + String.valueOf(counter));
+		}
+
+		return sb.toString();
 	}
 
 	public static String getCompressed(String str) {

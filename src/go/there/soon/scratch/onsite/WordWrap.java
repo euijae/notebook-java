@@ -1,6 +1,6 @@
 package go.there.soon.scratch.onsite;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class WordWrap {
 

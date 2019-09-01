@@ -1,8 +1,8 @@
-package go.there.soon.ctci.ch8.q7_8;
+package go.there.soon.ctci.ch8.q7;
 
 import java.util.ArrayList;
 
-public class Permutation {
+public class PermutationWithoutDups {
 
 	public static void main(String[] args) {
 		boolean isDuplicated = true;

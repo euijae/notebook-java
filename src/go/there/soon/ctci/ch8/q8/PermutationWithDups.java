@@ -1,11 +1,11 @@
-package go.there.soon.ctci.ch8.q7_8;
+package go.there.soon.ctci.ch8.q8;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Permutation2 {
+public class PermutationWithDups {
 
 	public static void main(String[] args) {
 		String str = "abcd";

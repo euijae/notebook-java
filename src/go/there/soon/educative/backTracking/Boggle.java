@@ -93,7 +93,7 @@ public class Boggle {
         if(isValid(visited, x, y)) {
             String newWord = word + grid[x][y];
 
-            if(root.isFound(newWord)) {
+            if(root.isCompleteWord(newWord)) {
                 ans.add(newWord);
             } else {
                 if(root.contains(newWord)) {

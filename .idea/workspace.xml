@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1910749b-2b3b-4adb-90d7-cb8ec8b3d63d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/go/there/soon/educative/arrays/FindMaxSingleSellProfit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/go/there/soon/educative/arrays/MergeIntervals.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/go/there/soon/educative/string/StringSegmentation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/go/there/soon/educative/trees/IterativeInorderTraversal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/go/there/soon/educative/math/AllSumCombinations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/go/there/soon/educative/stackQueue/ExpressionEvaluation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/go/there/soon/educative/string/RegularExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -25,19 +24,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/string/StringSegmentation.java">
+        <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/arrays/FindMaxSingleSellProfit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-218">
-              <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="315">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/math/AllSumCombinations.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="94" column="48" lean-forward="true" selection-start-line="94" selection-start-column="48" selection-end-line="94" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/string/RegularExpression.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/string/StringSegmentation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/trees/IterativeInorderTraversal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-302">
-              <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+            <state relative-caret-position="990">
+              <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/stackQueue/ExpressionEvaluation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -115,6 +150,9 @@
         <option value="$PROJECT_DIR$/src/go/there/soon/educative/arrays/MergeIntervals.java" />
         <option value="$PROJECT_DIR$/src/go/there/soon/educative/string/StringSegmentation.java" />
         <option value="$PROJECT_DIR$/src/go/there/soon/educative/trees/IterativeInorderTraversal.java" />
+        <option value="$PROJECT_DIR$/src/go/there/soon/educative/stackQueue/ExpressionEvaluation.java" />
+        <option value="$PROJECT_DIR$/src/go/there/soon/educative/math/AllSumCombinations.java" />
+        <option value="$PROJECT_DIR$/src/go/there/soon/educative/string/RegularExpression.java" />
       </list>
     </option>
   </component>
@@ -148,27 +186,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="soon" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="interview-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="soon" type="462c0819:PsiDirectoryNode" />
-              <item name="educative" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="interview-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="soon" type="462c0819:PsiDirectoryNode" />
-              <item name="educative" type="462c0819:PsiDirectoryNode" />
-              <item name="trees" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -198,13 +221,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.IterativeInorderTraversal">
-    <configuration name="FindMaxSingleSellProfit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="go.there.soon.educative.arrays.FindMaxSingleSellProfit" />
+  <component name="RunManager" selected="Application.RegularExpression">
+    <configuration name="AllSumCombinations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="go.there.soon.educative.math.AllSumCombinations" />
       <module name="Practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="go.there.soon.educative.arrays.*" />
+          <option name="PATTERN" value="go.there.soon.educative.math.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExpressionEvaluation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="go.there.soon.educative.stackQueue.ExpressionEvaluation" />
+      <module name="Practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="go.there.soon.educative.stackQueue.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -225,25 +261,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MergeIntervals" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="go.there.soon.educative.arrays.MergeIntervals" />
+    <configuration name="RegularExpression" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="go.there.soon.educative.string.RegularExpression" />
       <module name="Practice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="go.there.soon.educative.arrays.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PermuteString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="go.there.soon.educative.math.PermuteString" />
-      <module name="Practice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="go.there.soon.educative.math.*" />
+          <option name="PATTERN" value="go.there.soon.educative.string.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -266,11 +289,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RegularExpression" />
+        <item itemvalue="Application.AllSumCombinations" />
+        <item itemvalue="Application.ExpressionEvaluation" />
         <item itemvalue="Application.IterativeInorderTraversal" />
         <item itemvalue="Application.StringSegmentation" />
-        <item itemvalue="Application.MergeIntervals" />
-        <item itemvalue="Application.FindMaxSingleSellProfit" />
-        <item itemvalue="Application.PermuteString" />
       </list>
     </recent_temporary>
   </component>
@@ -306,7 +329,8 @@
       <workItem from="1569180411491" duration="9960000" />
       <workItem from="1569780486137" duration="1655000" />
       <workItem from="1569891437500" duration="980000" />
-      <workItem from="1569977541921" duration="3768000" />
+      <workItem from="1569977541921" duration="5974000" />
+      <workItem from="1570753948711" duration="3094000" />
     </task>
     <task id="LOCAL-00001" summary="search sort dp">
       <created>1567044667658</created>
@@ -336,11 +360,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569799902554</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=".">
+      <created>1569990256609</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1569990256609</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45516000" />
+    <option name="totallyTimeSpent" value="50816000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -354,7 +385,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.18012924" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.1825525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -363,7 +394,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50136983" side_tool="true" weight="0.21728595" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.13835616" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.28219178" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -393,30 +424,10 @@
     <MESSAGE value="search sort dp" />
     <MESSAGE value="autocomplete and ..." />
     <MESSAGE value="autocomplete, max heap, and permute string" />
-    <option name="LAST_COMMIT_MESSAGE" value="autocomplete, max heap, and permute string" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/StringLatin1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="203" column="9" lean-forward="true" selection-start-line="203" selection-start-column="9" selection-end-line="203" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/go/there/soon/ctci/ch4/q2/MinimalTree2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="619" column="6" lean-forward="true" selection-start-line="619" selection-start-column="6" selection-end-line="619" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/concurrent/LinkedTransferQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -711,28 +722,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/arrays/util/IntervalComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/arrays/util/Tuple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/arrays/util/IntervalComparator.java" />
+    <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/arrays/util/Tuple.java" />
     <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/arrays/MergeIntervals.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -747,13 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/arrays/FindMaxSingleSellProfit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/go/there/soon/ctci/ch3/q5/SortStack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -761,17 +745,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/arrays/FindMaxSingleSellProfit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/string/StringSegmentation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-218">
-          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="300">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/trees/IterativeInorderTraversal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-302">
-          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        <state relative-caret-position="990">
+          <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/stackQueue/ExpressionEvaluation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/math/AllSumCombinations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="94" column="48" lean-forward="true" selection-start-line="94" selection-start-column="48" selection-end-line="94" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/go/there/soon/educative/string/RegularExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
         </state>
       </provider>
     </entry>

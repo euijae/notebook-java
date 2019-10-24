@@ -1,11 +1,10 @@
 package go.there.soon.educative.backTracking;
 
-import go.there.soon.scratch.onsite.autocomplete.Trie;
+import go.there.soon.scratch.practice.autocomplete.Trie;
 
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.Set;
 
 public class Boggle {
 

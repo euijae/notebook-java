@@ -1,4 +1,4 @@
-package go.there.soon.scratch.onsite.sortSegmentedArray;
+package go.there.soon.scratch.practice.sortSegmentedArray;
 
 public class SortSegmentedArray {
     public static void main(String [] args) {

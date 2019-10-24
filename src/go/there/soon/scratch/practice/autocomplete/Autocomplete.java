@@ -1,4 +1,4 @@
-package go.there.soon.scratch.onsite.autocomplete;
+package go.there.soon.scratch.practice.autocomplete;
 
 import java.util.List;
 

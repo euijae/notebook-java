@@ -1,6 +1,5 @@
-package go.there.soon.scratch.onsite.sortSegmentedArray;
+package go.there.soon.scratch.practice.sortSegmentedArray;
 
-import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class MinHeap {

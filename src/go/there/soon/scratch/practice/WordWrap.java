@@ -1,4 +1,4 @@
-package go.there.soon.scratch.onsite;
+package go.there.soon.scratch.practice;
 
 import java.util.*;
 

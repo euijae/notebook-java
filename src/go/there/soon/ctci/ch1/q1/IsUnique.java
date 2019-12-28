@@ -1,8 +1,6 @@
 package go.there.soon.ctci.ch1.q1;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class IsUnique {

@@ -13,11 +13,15 @@ public class Trie {
 		for(int i = 0; i < str.length(); i++) {
 			char key = str.charAt(i);
 			
+			String word = temp.word == null ? "" : temp.word;
+			
 			if(!temp.children.containsKey(key)) {
 				temp.children.put(key, new TrieNode(key));
 			}
 			
 			temp = temp.children.get(key);
+			temp.word = word + key;
+			System.out.println(temp.word);
 		}
 		
 		temp.isWord = true;

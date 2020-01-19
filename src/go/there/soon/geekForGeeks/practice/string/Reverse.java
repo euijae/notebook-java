@@ -2,12 +2,14 @@ package go.there.soon.geekForGeeks.practice.string;
 
 /**
  * https://www.geeksforgeeks.org/reverse-an-array-without-affecting-special-characters/
- * @author eugene.kim
+ * @author euijaekim
  *
  */
 public class Reverse {
 	private String original;
 	private String result;
+	
+	public Reverse() {}
 	
 	public Reverse(String original) {
 		this.setOriginal(original);
@@ -15,9 +17,40 @@ public class Reverse {
 	}
 	
 	public static void main(String [] args) {
-		Reverse r = new Reverse("Ab,c,de!$");
+		String s = "a,b$c";
+		Reverse r = new Reverse(s);
 		System.out.print(r.getOriginal() + "\n" + r.getResult());
+		
+		Reverse r2 = new Reverse();
+		System.out.printf("orig: %s\n revs: %s\n", s, r2.reverseNotSpecialCharacters2(s));
 	}
+	
+	public String reverseNotSpecialCharacters2(String str) {
+		char [] arr = str.toCharArray();
+		int p1 = 0;
+		int p2 = arr.length-1;
+		
+		while(p1 < p2) {
+			while(p1 < p2 && !isAlphabet(arr[p1])) p1++;
+			if(p1 >= p2) return String.valueOf(arr);
+			while(p1 < p2 && !isAlphabet(arr[p2])) p2--;
+			if(p1 >= p2) return String.valueOf(arr);
+			swap(arr, p1, p2);
+		}
+		
+		return String.valueOf(arr);
+	}
+	
+	public boolean isAlphabet(char ch) {
+		int val1 = ch - 'a';
+		int val2 = ch - 'A';
+		return (val1 >= 0 && val1 < 26) || (val2 >= 0 && val2 < 26);
+	}	
+	
+	
+	
+	
+	
 	
 	public String reverseNotSpecialCharacters(String str) {
 		char [] chars = str.toCharArray();

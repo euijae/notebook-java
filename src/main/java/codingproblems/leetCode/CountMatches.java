@@ -1,3 +1,5 @@
+package codingproblems.leetCode;
+
 /**
  *  Input: items = [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]],  
  *          ruleKey = "color", 

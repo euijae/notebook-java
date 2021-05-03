@@ -1,4 +1,4 @@
-package datastructures.queue;
+package main.java.datastructures.queue;
 
 public interface QueueInterface<T> {
 	/**
@@ -6,27 +6,27 @@ public interface QueueInterface<T> {
 	 * @return
 	 */
 	public boolean isEmpty();
-	
+
 	/**
 	 * Removes and returns the front item
 	 * @return
 	 * @throws QueueException
 	 */
 	public T dequeue() throws QueueException;
-	
+
 	/**
 	 * Return the front item without its removal
 	 * @return
 	 * @throws QueueException
 	 */
 	public T getFront() throws QueueException;
-	
+
 	/**
 	 * Inserts an item to the back
 	 * @param e
 	 */
 	public void enqueue(T e);
-	
+
 	/**
 	 * Removes all items from the Queue
 	 */

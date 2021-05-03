@@ -1,4 +1,4 @@
-package datastructures.queue;
+package main.java.datastructures.queue;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -11,7 +11,7 @@ public class ArrayQueue<T> implements QueueInterface<T>, Iterable<T> {
 				front,		// front index
 				back;		// back index
 	private T [] A;
-	
+
 	/**
 	 * Creates a new empty queue
 	 */
@@ -22,7 +22,7 @@ public class ArrayQueue<T> implements QueueInterface<T>, Iterable<T> {
 		back = -1;
 		front = 0;
  	}
-	
+
 	@Override
 	public Iterator<T> iterator() {
 		return new QueueIterator();
@@ -40,7 +40,7 @@ public class ArrayQueue<T> implements QueueInterface<T>, Iterable<T> {
 	/**
 	 * Returns and removes the front element of the queue.
 	 * It works with wraparound.
-	 * 
+	 *
 	 * @return element at front of the queue
 	 * @throws NoSuchElementException if the queue is empty
 	 */
@@ -62,7 +62,7 @@ public class ArrayQueue<T> implements QueueInterface<T>, Iterable<T> {
 		else
 			return A[front%cap];
 	}
-		
+
 	@Override
 	public void enqueue(T e) {
 		if(isFull()) doubleSize();
@@ -75,37 +75,37 @@ public class ArrayQueue<T> implements QueueInterface<T>, Iterable<T> {
 
 	/**
 	 * Returns the first element in the queue.
-	 * 
+	 *
 	 * @return element at front of the queue
 	 * @throws NoSuchElementException if the queue is empty
 	 */
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	public boolean isFull() {
 		return cur == cap;
 	}
-	
+
 	/**
 	 * Increase the queue capacity by doubling the size.
 	 */
 	public void doubleSize() {
 		@SuppressWarnings("unchecked")
 		T [] newArray = (T []) new Object[2*cap];
-		
+
 		for(int i = front; i <= back; i++) {
 			newArray[i-front] = A[i%cap];
 		}
-		
+
 		A = newArray;
 		front = 0;
 		back = cur - 1;
 		cap *= 2;
 	}
-	
+
 	private class QueueIterator implements Iterator<T> {
 		private int index; // traversal index
 
@@ -115,7 +115,7 @@ public class ArrayQueue<T> implements QueueInterface<T>, Iterable<T> {
 		public QueueIterator() {
 			index = front;
 		}
-		
+
 		/**
 		 * Tests if there are more items in the Queue
 		 */
@@ -131,7 +131,7 @@ public class ArrayQueue<T> implements QueueInterface<T>, Iterable<T> {
 		public T next() {
 			return A[(index++)%cap];
 		}
-		
+
 		/**
 		 * Remove is not implemented
 		 */

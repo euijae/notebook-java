@@ -1,4 +1,4 @@
-package datastructures.stack;
+package main.java.datastructures.stack;
 
 import java.util.Stack;
 
@@ -13,10 +13,10 @@ public class Calculator {
 		Stack<Integer> operands = new Stack<>();
 		Stack<Character> operators = new Stack<>();
 		int i = 0;
-		
+
 		while(i < str.length()) {
 			char ch = str.charAt(i++);
-			
+
 			if(Character.isDigit(ch)) {
 				operands.push(Character.getNumericValue(ch));
 				handleMultDiv(operands, operators);
@@ -28,9 +28,9 @@ public class Calculator {
 				}
 			}
 		}
-		
+
 		infix(operands, operators);
-		
+
 		return operands.pop();
 	}
 
@@ -44,13 +44,13 @@ public class Calculator {
 			}
 		}
 	}
-	
+
 	private static void infix(Stack<Integer> operands, Stack<Character> operators) {
 		while(!operators.isEmpty()) {
 			char ch = operators.pop();
 			int op1 = operands.pop();
 			int op2 = operands.pop();
-			
+
 			if(ch == '+') {
 				operands.push(op1 + op2);
 			} else if(ch == '-'){
@@ -62,13 +62,13 @@ public class Calculator {
 			}
 		}
 	}
-	
+
 	private static void handleParentheses(Stack<Integer> operands, Stack<Character> operators) {
 		while(!operators.isEmpty() && !operands.isEmpty() && operators.peek() != '(') {
 			char ch = operators.pop();
 			int op1 = operands.pop();
 			int op2 = operands.pop();
-			
+
 			if(ch == '+') {
 				operands.push(op1 + op2);
 			} else if(ch == '-') {
@@ -81,14 +81,14 @@ public class Calculator {
 				throw new RuntimeException("incorrrect...");
 			}
 		}
-		
+
 		if(operators.peek() == '(')
 			operators.pop();
 		else {
 			throw new RuntimeException("incorrrect...");
 		}
 	}
-	
+
 	private static boolean isOperator(char ch) {
 		char [] arr = {'+', '-', '*', '/', '(', ')'};
 		for(int i = 0; i < arr.length; i++)

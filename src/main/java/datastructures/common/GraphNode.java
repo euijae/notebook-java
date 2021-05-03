@@ -1,9 +1,11 @@
-package datastructures.common;
+package main.java.datastructures.common;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import static main.java.datastructures.common.Status.*;
 
 public class GraphNode<T extends Comparable<T>> {
 
@@ -16,11 +18,11 @@ public class GraphNode<T extends Comparable<T>> {
 	private List<GraphNode<T>> predecessors = new LinkedList<>();
 	private List<GraphNode<T>> shortestPath = new LinkedList<>();
 	private Map<GraphNode<T>, Integer> adjacentNodes = new HashMap<>();
-	
+
 	/** Constructors */
 	public GraphNode() {
 		this.setVisited(false);
-		this.setStatus(Status.UNVISITED.toString());
+		this.setStatus(UNVISITED.toString());
 		this.setDistance(Integer.MAX_VALUE);
 		this.setPredecessor(null);
 	}
@@ -29,7 +31,7 @@ public class GraphNode<T extends Comparable<T>> {
 		this();
 		this.setData(data);
 	}
-	
+
 	public GraphNode(GraphNode<T> g) {
 		this.setAdjacentNodes(g.getAdjacentNodes());
 		this.setData(g.getData());

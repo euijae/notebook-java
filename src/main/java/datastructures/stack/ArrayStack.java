@@ -1,27 +1,27 @@
-package datastructures.stack;
+package main.java.datastructures.stack;
 
 public class ArrayStack<T> implements StackInterface<T> {
 
 	private static final int DEFAULT_CAPACITY = 15;
 	private int top; // reference to the top element
 	private T[] t;
-	
+
 	/**
 	 * Creates a Stack of the size initialCapacity
 	 * @param initialCapacity
 	 */
 	@SuppressWarnings("unchecked")
 	public ArrayStack(int initialCapacity) {
-		int size = (initialCapacity <= 0) ? DEFAULT_CAPACITY : initialCapacity; 
-		
+		int size = (initialCapacity <= 0) ? DEFAULT_CAPACITY : initialCapacity;
+
 		t = (T []) new Object[size];
 		top = -1; // stack is empty
 	}
-	
+
 	public ArrayStack() {
 		this(DEFAULT_CAPACITY);
 	}
-	
+
 	/**
 	 * Tests if the stack is empty.
 	 */
@@ -62,12 +62,12 @@ public class ArrayStack<T> implements StackInterface<T> {
 	 */
 	@Override
 	public void clear() {
-		for(int i = 0; i < t.length; i++) 
+		for(int i = 0; i < t.length; i++)
 			t[i] = null;
-		
+
 		top = -1;
 	}
-	
+
 	/**
 	 * Returns a string representation of the Stack
 	 */
@@ -76,15 +76,15 @@ public class ArrayStack<T> implements StackInterface<T> {
 		StringBuffer out = new StringBuffer("[");
 		for(int i = 0; i < top; i++)
 			out.append(t[i] + ", ");
-		
+
 		out.append(t[top] + "]");
-		
+
 		return out.toString();
 	}
-	
+
 	public static void main(String[] args) {
 		ArrayStack<Integer> s = new ArrayStack<>(6);
-		
+
 		try {
 			for(int i = 0; i < 6; i++) s.push(i);
 			System.out.println(s);

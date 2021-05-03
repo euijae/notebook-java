@@ -1,4 +1,4 @@
-package datastructures.common;
+package main.java.datastructures.common;
 
 public enum Status {
 	UNVISITED,

@@ -1,6 +1,6 @@
-package datastructures.graph.drivers;
+package main.java.datastructures.graph.drivers;
 
-import datastructures.graph.UnionFind;
+import main.java.datastructures.graph.UnionFind;
 
 public class UnionFindDriver {
 
@@ -14,7 +14,7 @@ public class UnionFindDriver {
 		uf.print();
 		uf.weightedUnion(3, 2);
 		uf.print();
-		
+
 		System.out.println("uf.find(1, 4) = " + uf.find(1, 4));
 		System.out.println("uf.find(1, 4) = " + uf.find(3, 5));
 	}

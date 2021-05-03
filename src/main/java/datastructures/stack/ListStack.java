@@ -1,9 +1,9 @@
-package datastructures.stack;
+package main.java.datastructures.stack;
 
 public class ListStack<T> implements StackInterface<T> {
 
 	private Node<T> top;
-	
+
 	public ListStack() {
 		this.top = null;
 	}
@@ -25,7 +25,7 @@ public class ListStack<T> implements StackInterface<T> {
 	@Override
 	public T pop() throws StackException {
 		if(top == null) throw new StackException("Stack is empty");
-		
+
 		T data = top.data;
 		top = top.next;
 		return data;
@@ -63,23 +63,23 @@ public class ListStack<T> implements StackInterface<T> {
 	@Override
 	public String toString() {
 		if(isEmpty()) return "[ ]";
-		
+
 		StringBuffer out = new StringBuffer("[ ");
 		Node<T> tmp = top;
-		
+
 		while(tmp != null) {
 			out.append(tmp.data + " ");
 			tmp = tmp.next;
 		}
-		
+
 		out.append("]");
-		
+
 		return out.toString();
 	}
 
 	public static void main(String[] args) {
 		ListStack<Integer> s = new ListStack<>();
-		
+
 		try {
 			for(int i = 0; i < 6; i++) s.push(i);
 			System.out.println(s);

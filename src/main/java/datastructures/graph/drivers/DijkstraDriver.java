@@ -1,11 +1,11 @@
-package datastructures.graph.drivers;
+package main.java.datastructures.graph.drivers;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-import datastructures.common.GraphNode;
-import datastructures.graph.Graph;
+import main.java.datastructures.common.GraphNode;
+import main.java.datastructures.graph.Graph;
 
 public class DijkstraDriver {
 
@@ -16,7 +16,7 @@ public class DijkstraDriver {
 		GraphNode<String> nodeD = new GraphNode<>("D");
 		GraphNode<String> nodeE = new GraphNode<>("E");
 		GraphNode<String> nodeF = new GraphNode<>("F");
-		
+
 		Map<GraphNode<String>, Integer> map1 = new HashMap<>();
 		Map<GraphNode<String>, Integer> map2 = new HashMap<>();
 		Map<GraphNode<String>, Integer> map3 = new HashMap<>();
@@ -35,19 +35,19 @@ public class DijkstraDriver {
 		nodeC.setAdjacentNodes(map3);
 		nodeD.setAdjacentNodes(map4);
 		nodeF.setAdjacentNodes(map5);
-		
+
 		Graph<String> graph = new Graph<>();
 		graph.dijkstra(nodeA);
-		
+
 		Stack<GraphNode<String>> shortestPath = new Stack<>();
 		shortestPath.push(nodeE);
-		
+
 		GraphNode<String> node = nodeE;
 		while(node.getPredecessor() != null) {
 			shortestPath.push(node.getPredecessor());
 			node = node.getPredecessor();
 		}
-		
+
 		while(!shortestPath.isEmpty()) {
 			System.out.print(shortestPath.pop().getData() + " ");
 		}

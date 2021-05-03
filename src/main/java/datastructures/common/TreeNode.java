@@ -1,4 +1,4 @@
-package datastructures.common;
+package main.java.datastructures.common;
 
 public class TreeNode<T extends Comparable<T>> {
 
@@ -12,7 +12,7 @@ public class TreeNode<T extends Comparable<T>> {
 		this.root = root;
 		this.left = root.left;
 	}
-	
+
 	public TreeNode<T> getLeft() {
 		return left;
 	}
